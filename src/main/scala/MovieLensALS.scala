@@ -34,13 +34,13 @@ object MovieLensALS {
     val conf = new SparkConf()
       .setMaster("local")
       .setAppName("MovieLensALS")
-      .set("spark.executor.memory", "2g")
+      .set("spark.executor.memory", "3g")
     val sc = new SparkContext(conf)
 
     // load personal ratings
 
     val myRatings = loadRatings(arg(1))
-    val myRatingsRDD = sc.parallelize(myRatings, 1)
+    val myRatingsRDD = sc.parallelize(myRatings, 4)
 
     // load ratings and movie titles
 
