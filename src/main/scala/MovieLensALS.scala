@@ -40,7 +40,7 @@ object MovieLensALS {
     // load personal ratings
 
     val myRatings = loadRatings(arg(1))
-    val myRatingsRDD = sc.parallelize(myRatings, 4)
+    val myRatingsRDD = sc.parallelize(myRatings, 1)
 
     // load ratings and movie titles
 
