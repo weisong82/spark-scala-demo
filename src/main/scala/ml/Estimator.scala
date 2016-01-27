@@ -1,5 +1,6 @@
 package ml
 
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.ml.classification.LogisticRegression
 import org.apache.spark.ml.param.ParamMap
@@ -13,6 +14,10 @@ object Estimator {
 
 
   def main(args: Array[String]) {
+
+    Logger.getLogger("org.apache.spark").setLevel(Level.WARN)
+    Logger.getLogger("org.eclipse.jetty.server").setLevel(Level.OFF)
+
     val conf = new SparkConf()
       .setMaster("local")
       .setAppName("Estimator")

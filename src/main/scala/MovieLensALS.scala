@@ -21,7 +21,7 @@ object MovieLensALS {
     Logger.getLogger("org.apache.spark").setLevel(Level.WARN)
     Logger.getLogger("org.eclipse.jetty.server").setLevel(Level.OFF)
 
-    val arg = Array("D:\\java\\ml-10M100K","D:\\java\\ml-10M100K\\ratings.dat")
+    val arg = Array("/home/java/ml-10M100K","/home/java/ml-10M100K/ratings.dat")
 
 //    if (args.length != 2) {
 //      println("Usage: /path/to/spark/bin/spark-submit --driver-memory 2g --class MovieLensALS " +
